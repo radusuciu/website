@@ -1,6 +1,26 @@
 #coding:utf-8
 from cactus.contrib.external.closure import ClosureJSOptimizer
-from cactus.contrib.external.yui import YUICSSOptimizer
+from cactus.static.external import External
+import subprocess
+import os
+
+
+
+class _MinifyCSS(External):
+    supported_extensions = ('css', )
+    output_extension = 'css'
+    _minify_path = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
+        'utils/minify/minify'
+    )
+
+    def _run(self):
+        subprocess.call([
+            self._minify_path,
+            '--type', 'css',
+            '-o', self.dst,
+            self.src,
+        ])
 
 
 def preBuild(site):
@@ -22,6 +42,6 @@ def preBuild(site):
 
     if "css" in optimize:
         # Same thing for CSS.
-        site.external_manager.register_optimizer(YUICSSOptimizer)
+        site.external_manager.register_optimizer(_MinifyCSS)
 
     # Add your own types here!

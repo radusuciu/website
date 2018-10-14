@@ -1,5 +1,6 @@
 {
     "prettify": true,
     "locale": "en",
-    "site-url": "http://www.mixxx.org/"
+    "site-url": "http://www.mixxx.org/",
+    "optimize": ["css"]
 }
