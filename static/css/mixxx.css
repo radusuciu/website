@@ -11,6 +11,7 @@ html, body
 body
 {
     font-family: 'Muli', 'Corbel', 'Tahoma', 'Trebuchet MS', Verdana, arial, serif;
+    font-weight: 200;
     background-color: #000000;
     color: #eeeeee;
     padding: 0.5em;
@@ -200,10 +201,26 @@ img.center
 
 #navbar
 {
-    font-size: 1.4em;
+    font-family: 'Open Sans', 'Muli', sans-serif;
+    font-weight: 300;
+    font-size: 1.8em;
     height: 55px;
-    text-align: center;
+    text-align: right;
     position: relative;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', 'Muli', sans-serif;
+    font-weight: 600;    
+}
+
+h2 {
+    font-size:1.4em;
+}
+
+#navbar a:hover
+{
+    color: #2d9c74;
 }
 
 #navbar a
@@ -293,8 +310,8 @@ img.center
     margin-bottom: 60px;
     background-color: #111111;
     color: #eeeeee;
-    border: 1px #222222 solid;
-    border-radius: 5px;
+    /* border: 1px #222222 solid; */
+    /* border-radius: 5px; */
     text-align: left;
 }
 
@@ -306,6 +323,26 @@ img.center
 .gapfiller .download_button
 {
     float:right;
+}
+
+.download_button
+{
+    background: #39b54a;
+    color:white;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+.download_button:hover
+{
+    background: #81c409;
+}
+
+.download_button a {
+    display:block;
+    color:white;
+    padding:18px;
+    /* text-transform:uppercase; */
 }
 
 .download_button img
@@ -360,6 +397,8 @@ img.center
 .feature_indent
 {
     margin-left: 60px;
+    margin-top:0;
+    padding-top:0;
 }
 
 .halfbox_left, .halfbox_right
@@ -367,6 +406,12 @@ img.center
     padding: 20px;
     float: left;
     width: 430px;
+}
+
+.halfbox_left h2, .halfbox_right h2
+{
+    margin-bottom:0;
+    padding-bottom:0;
 }
 
 .halfbox_right {
